@@ -538,15 +538,17 @@ function comprobarNuevaMovilidad() {
   let inputPais = document.getElementById("modalModificarPais");
   let inputCiudad = document.getElementById("modalModificarCiudad");
   if (
-    inputTipo == null ||
-    inputTipo == "" ||
-    inputNombre == null ||
-    inputNombre == "" ||
-    inputPais == null ||
-    inputPais == "" ||
-    inputCiudad == null ||
-    inputCiudad == ""
+    inputTipo.value == null ||
+    inputTipo.value == "" ||
+    inputNombre.value == null ||
+    inputNombre.value == "" ||
+    inputPais.value == null ||
+    inputPais.value == "" ||
+    inputCiudad.value == null ||
+    inputCiudad.value == ""
   ) {
+    botonNuevo.disabled = true;
+  } else if(inputTipo.value != null && inpuinputNombretTipo.value != null && inputPais.value != null && inputCiudad.value != null &&) {
     botonNuevo.disabled = false;
   }
 }
