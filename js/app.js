@@ -433,4 +433,125 @@ function myMap() {
   map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
+function cargarListaMovilidadesModal() {
+  let e = document.getElementById("panelListaMovilidades");
+
+  globalArray.forEach(element => {
+    let li = document.createElement("li");
+    let stringbuilder =
+      element.tipo +
+      " - " +
+      element.ciclo +
+      " - " +
+      element.ciudad +
+      ", " +
+      element.pais;
+
+    li.innerText = stringbuilder;
+    li.className = "list-group-item";
+    e.appendChild(li);
+  });
+
+  let infoe = document.getElementById("panelListaMovilidadesInfo");
+  infoe.innerText =
+    "A continuacion se encuentra la lista con todas las movilidades, en total hay " +
+    globalArray.length +
+    " movilidades.";
+}
+
+function cargarListaMovilidadModalModificar() {
+  let e = document.getElementById("modalModificarMovilidad");
+  let o = document.createElement("option");
+  o.innerText = "Seleccione una opcion";
+  o.value = "ninguno";
+  e.appendChild(o);
+  globalArray.forEach(element => {
+    let o = document.createElement("option");
+    let stringbuilder =
+      element.tipo +
+      " - " +
+      element.ciclo +
+      " - " +
+      element.ciudad +
+      ", " +
+      element.pais;
+    o.value = element.id;
+    o.innerText = stringbuilder;
+    e.appendChild(o);
+  });
+}
+
+function cargaListaMovilidadesModificarSelect(e) {
+  let input = globalArray.filter(element => element.id === e.value);
+
+  let inputTipo = document.getElementById("modalModificarTipoMovilidad");
+  let inputNombre = document.getElementById("modalModificarNombreCiclo");
+  let inputPais = document.getElementById("modalModificarPais");
+  let inputCiudad = document.getElementById("modalModificarCiudad");
+  let botonModificar = document.getElementById("modalModificarBoton");
+  let botonEliminar = document.getElementById("modalEliminarBoton");
+
+  if (e.value != "ninguno") {
+    let id = input[0].id;
+    let tipo = input[0].tipo;
+    let nombre = input[0].ciclo;
+    let pais = input[0].pais;
+    let ciudad = input[0].ciudad;
+
+    inputTipo.disabled = false;
+    inputTipo.value = tipo;
+
+    inputNombre.disabled = false;
+    inputNombre.value = nombre;
+
+    inputPais.disabled = false;
+    inputPais.value = pais;
+
+    inputCiudad.disabled = false;
+    inputCiudad.value = ciudad;
+
+    botonModificar.disabled = false;
+    botonEliminar.disabled = false;
+  } else {
+    inputTipo.disabled = true;
+    inputTipo.value = "Movilidad";
+
+    inputNombre.disabled = true;
+    inputNombre.value = "";
+
+    inputPais.disabled = true;
+    inputPais.value = "";
+
+    inputCiudad.disabled = true;
+    inputCiudad.value = "";
+
+    botonModificar.disabled = true;
+    botonEliminar.disabled = true;
+  }
+}
+
+function comprobarNuevaMovilidad() {
+  let botonNuevo = document.getElementById("modalNuevoBoton");
+
+  let inputTipo = document.getElementById("modalModificarTipoMovilidad");
+  let inputNombre = document.getElementById("modalModificarNombreCiclo");
+  let inputPais = document.getElementById("modalModificarPais");
+  let inputCiudad = document.getElementById("modalModificarCiudad");
+  if (
+    inputTipo == null ||
+    inputTipo == "" ||
+    inputNombre == null ||
+    inputNombre == "" ||
+    inputPais == null ||
+    inputPais == "" ||
+    inputCiudad == null ||
+    inputCiudad == ""
+  ) {
+    botonNuevo.disabled = false;
+  }
+}
+
+cargarListaMovilidadesModal();
+cargarListaMovilidadModalModificar();
+
 //#endregion
