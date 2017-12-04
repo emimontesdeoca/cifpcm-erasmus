@@ -277,7 +277,7 @@ function cargarArrayGlobal() {
 function buscar() {
   /// Esto es meramente estetico par aminorar lo que el usuario ve debido a los erroes de google maps con bootstrap
   var mapsDiv = document.getElementById("googleMap");
-  mapsDiv.className = "animated fadeIn";
+  mapsDiv.className = "animated fadeIn";  
 
   /// Array final que se va a utilizar para mostrar en el google maps
   let finalArrayFiltered = [];
@@ -533,10 +533,10 @@ function cargaListaMovilidadesModificarSelect(e) {
 function comprobarNuevaMovilidad() {
   let botonNuevo = document.getElementById("modalNuevoBoton");
 
-  let inputTipo = document.getElementById("modalModificarTipoMovilidad");
-  let inputNombre = document.getElementById("modalModificarNombreCiclo");
-  let inputPais = document.getElementById("modalModificarPais");
-  let inputCiudad = document.getElementById("modalModificarCiudad");
+  let inputTipo = document.getElementById("modalNuevoTipoMovilidad");
+  let inputNombre = document.getElementById("modalNuevoNombreCiclo");
+  let inputPais = document.getElementById("modalNuevoPais");
+  let inputCiudad = document.getElementById("modalNuevoCiudad");
   if (
     inputTipo.value == null ||
     inputTipo.value == "" ||
@@ -548,7 +548,7 @@ function comprobarNuevaMovilidad() {
     inputCiudad.value == ""
   ) {
     botonNuevo.disabled = true;
-  } else if(inputTipo.value != null && inpuinputNombretTipo.value != null && inputPais.value != null && inputCiudad.value != null &&) {
+  } else if(inputTipo.value != null && inputNombre.value != null && inputPais.value != null && inputCiudad.value != null) {
     botonNuevo.disabled = false;
   }
 }
