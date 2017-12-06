@@ -34,7 +34,7 @@
                     <a class="nav-link" href="docs/index.html">Docs</a>
                 </li>
             </ul>
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#panelModal">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#panelModal" id="botonPanel">
                 <i class="fa fa-user" aria-hidden="true"></i> Panel</button>
         </div>
     </nav>
@@ -174,7 +174,7 @@
                                                 </div>
                                             </div>
                                             <div class="text-center">
-                                                <button type="button" disabled id="modalNuevoBoton" class="btn btn-success">Añadir</button>
+                                                <button type="button" disabled id="modalNuevoBoton" class="btn btn-success" onclick="nuevaMovilidad();" data-dismiss="modal">Añadir</button>
                                             </div>
                                         </form>
 
@@ -197,6 +197,7 @@
                                         <p>En caso de querer eliminar el registro, pulse en el boton eliminar,
                                             <span class="text-danger">los registros eliminados no pueden recueperarse</span>.</p>
 
+                                        <div type="hidden" id="modalModificarMovilidadId"></div>
                                         <div class="row">
                                             <div class="form-group col-sm-10">
                                                 <label for="modalModificarMovilidad">Movilidad</label>
@@ -204,7 +205,7 @@
                                                 </select>
                                             </div>
                                             <div class=" form-group col-sm-2 text-center" style="margin-top: 30px;">
-                                                <button type="button" id="modalEliminarBoton" class="btn btn-danger" disabled>Eliminar</button>
+                                                <button type="button" id="modalEliminarBoton" class="btn btn-danger" disabled onclick="eliminarMovilidad();" data-dismiss="modal">Eliminar</button>
                                             </div>
                                         </div>
 
@@ -238,7 +239,7 @@
                                         </div>
                                         <br>
                                         <div class="text-center">
-                                            <button type="button" id="modalModificarBoton" class="btn btn-warning" disabled>Modificar</button>
+                                            <button type="button" id="modalModificarBoton" class="btn btn-warning" disabled onclick="modificarMovilidad();" data-dismiss="modal">Modificar</button>
                                         </div>
 
 

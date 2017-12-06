@@ -1,4 +1,32 @@
-//#region Constantes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: app.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: app.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>//#region Constantes
 
 //#region LOGICA
 /** @constant {map} GoogleMaps objeto donde se guarda el objeto maps */
@@ -15,21 +43,21 @@ cargarArrayGlobal();
 
 /** @constant {div} container Codigo html para tipo de busqueda de grado medio o superior*/
 const tipoDeBusquedaHTML =
-  "<fieldset class='form-group animated fadeIn' id='panelGenerado'><div class='row'><legend class='animated fadeIn col-form-legend col-sm-4'>Tipo de busqueda</legend><div class='col-sm-8'><div class='form-check'><label class='form-check-label'><input class='form-check-input' type='radio' name='tipoBusqueda' value='nombre' onchange='generarTipoBusqueda()'> Nombre</label></div><div class='form-check'><label class='form-check-label'><input class='form-check-input' type='radio' name='tipoBusqueda' value='pais' onchange='generarTipoBusqueda()'> Pais</label></div></div></div></fieldset><div class='form-group row animated fadeIn' id='contenedorBusqueda'></div>";
+  "&lt;fieldset class='form-group animated fadeIn' id='panelGenerado'>&lt;div class='row'>&lt;legend class='animated fadeIn col-form-legend col-sm-4'>Tipo de busqueda&lt;/legend>&lt;div class='col-sm-8'>&lt;div class='form-check'>&lt;label class='form-check-label'>&lt;input class='form-check-input' type='radio' name='tipoBusqueda' value='nombre' onchange='generarTipoBusqueda()'> Nombre&lt;/label>&lt;/div>&lt;div class='form-check'>&lt;label class='form-check-label'>&lt;input class='form-check-input' type='radio' name='tipoBusqueda' value='pais' onchange='generarTipoBusqueda()'> Pais&lt;/label>&lt;/div>&lt;/div>&lt;/div>&lt;/fieldset>&lt;div class='form-group row animated fadeIn' id='contenedorBusqueda'>&lt;/div>";
 
 /** @constant {div} container Codigo html para tipo de busqudea de los profesores */
 const tipoDeBusquedaHTMLProfesores =
-  "<fieldset class='form-group animated fadeIn' id='panelGenerado'><div class='form-group row animated fadeIn' id='contenedorBusqueda'></div>";
+  "&lt;fieldset class='form-group animated fadeIn' id='panelGenerado'>&lt;div class='form-group row animated fadeIn' id='contenedorBusqueda'>&lt;/div>";
 
 /** @constant {div} container Codigo html para combobox de paises */
 const tipoBusquedaPais =
-  "<label for='inputPais'class='col-sm-4 col-form-label animated fadeIn'>Paises</label><div class='animated fadeIn col-sm-8'><select id='inputPais' class='form-control' onchange='filtroPorPais(this)'></select></div>";
+  "&lt;label for='inputPais'class='col-sm-4 col-form-label animated fadeIn'>Paises&lt;/label>&lt;div class='animated fadeIn col-sm-8'>&lt;select id='inputPais' class='form-control' onchange='filtroPorPais(this)'>&lt;/select>&lt;/div>";
 /** @constant {div} container Codigo html para checkboxes de ciclos*/
 const checkboxesCiclos =
-  "<div class='col-sm-4 animated fadeIn'>Nombre de ciclos</div><div class='col-sm-8 animated fadeIn' id='contenedorCheckboxes'></div>";
+  "&lt;div class='col-sm-4 animated fadeIn'>Nombre de ciclos&lt;/div>&lt;div class='col-sm-8 animated fadeIn' id='contenedorCheckboxes'>&lt;/div>";
 /** @constant {div} Boton Boton a generar */
 const botonBuscar =
-  "<div id='btnBuscarDiv' class='buttons text-center buttonbuscar animated fadeIn'><button type='button' class='btn btn-success' id='btnBuscar' data-toggle='modal' data-target='#busquedaModal' onclick='buscar()' ><i class='fa fa-search' aria-hidden='true'></i> Buscar</button></div>";
+  "&lt;div id='btnBuscarDiv' class='buttons text-center buttonbuscar animated fadeIn'>&lt;button type='button' class='btn btn-success' id='btnBuscar' data-toggle='modal' data-target='#busquedaModal' onclick='buscar()' >&lt;i class='fa fa-search' aria-hidden='true'>&lt;/i> Buscar&lt;/button>&lt;/div>";
 
 /** @constant {div} container Elemento donde se genera el HTML */
 const containerGeneracion = document.getElementById("panelGenerado");
@@ -78,7 +106,7 @@ function generarCheckboxesCiclos(e) {
   let filteredByCiclos = [];
 
   /// Añadir al array los ciclos filtrados por el tipo
-  for (let i = 0; i < globalArray.length; i++) {
+  for (let i = 0; i &lt; globalArray.length; i++) {
     let tipo = globalArray[i].tipo;
     let tipofiltro = e.value;
     if (tipo == tipofiltro) {
@@ -113,7 +141,7 @@ function generarCheckboxesCiclos(e) {
   contenedorCheckboxes.appendChild(div);
 
   /// Por cada item en el array filtrado agregar el checkbox, hay que agregar mas cosas de bootstrap.
-  for (let index = 0; index < filteredByCiclos.length; index++) {
+  for (let index = 0; index &lt; filteredByCiclos.length; index++) {
     let div = document.createElement("div");
     div.className = "form-check";
 
@@ -144,13 +172,13 @@ function checkAll() {
   var checkboxes = document.querySelectorAll('input[name="ciclo"]');
   var todos = document.getElementById("todos");
   if (todos.checked) {
-    for (var i = 0; i < checkboxes.length; i++) {
+    for (var i = 0; i &lt; checkboxes.length; i++) {
       if (checkboxes[i].type == "checkbox") {
         checkboxes[i].checked = true;
       }
     }
   } else {
-    for (var i = 0; i < checkboxes.length; i++) {
+    for (var i = 0; i &lt; checkboxes.length; i++) {
       if (checkboxes[i].type == "checkbox") {
         checkboxes[i].checked = false;
       }
@@ -186,7 +214,7 @@ function generarComboboxPaises() {
   let e = document.getElementById("inputTipoMovilidad").value;
 
   /// Añadir al paisesByTipo los pasies de ese tipo movildiad
-  for (let i = 0; i < globalArray.length; i++) {
+  for (let i = 0; i &lt; globalArray.length; i++) {
     let tipo = globalArray[i].tipo;
     let tipofiltro = e;
     if (tipo == tipofiltro) {
@@ -200,7 +228,7 @@ function generarComboboxPaises() {
   }
 
   /// Por cada item agregar un option al combobox
-  for (var i = 0; i < paisesByTipo.length; i++) {
+  for (var i = 0; i &lt; paisesByTipo.length; i++) {
     var opt = document.createElement("option");
     opt.value = paisesByTipo[i];
     opt.innerHTML = paisesByTipo[i];
@@ -262,7 +290,7 @@ function filtroPorPais(e) {
       .removeChild(document.getElementById("btnBuscarDiv"));
   }
   // Si el boton existe y el valor introducido no es ninguno, añadir el boton
-  if (value != null && value != "ninguno") {
+  if (value != null &amp;&amp; value != "ninguno") {
     let container = document.getElementById("contenedorBusqueda");
     container.insertAdjacentHTML("beforeend", botonBuscar);
   }
@@ -281,11 +309,11 @@ function filtroPorCiclo() {
   var myNode = document.getElementById("btnBuscarDiv");
 
   /// Si hay cursos cargados y el boton buscar es nulo
-  if (checkedBoxes.length > 0 && myNode == null) {
+  if (checkedBoxes.length > 0 &amp;&amp; myNode == null) {
     /// Agregar el boton
     let container = document.getElementById("contenedorBusqueda");
     container.insertAdjacentHTML("beforeend", botonBuscar);
-  } else if (checkedBoxes.length == 0 && myNode != null) {
+  } else if (checkedBoxes.length == 0 &amp;&amp; myNode != null) {
     /// Sino borrar todo
     if (myNode != null) {
       while (myNode.firstChild) {
@@ -308,7 +336,7 @@ function filtroPorCiclo() {
  */
 function cargarArrayGlobal() {
   /// Crear un array con objetos tipo movilidad
-  for (let index = 0; index < data.length; index++) {
+  for (let index = 0; index &lt; data.length; index++) {
     const e = data[index];
     var m = new movilidad(e.tipo, e.ciclo, e.pais, e.ciudad);
     globalArray.push(m);
@@ -619,9 +647,9 @@ function comprobarNuevaMovilidad() {
   ) {
     botonNuevo.disabled = true;
   } else if (
-    inputTipo.value != null &&
-    inputNombre.value != null &&
-    inputPais.value != null &&
+    inputTipo.value != null &amp;&amp;
+    inputNombre.value != null &amp;&amp;
+    inputPais.value != null &amp;&amp;
     inputCiudad.value != null
   ) {
     botonNuevo.disabled = false;
@@ -702,3 +730,26 @@ function functionsBtnPanel() {
 }
 
 //#endregion
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="movilidad.html">movilidad</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Boton">Boton</a></li><li><a href="global.html#buscar">buscar</a></li><li><a href="global.html#cargaListaMovilidadesModificarSelect">cargaListaMovilidadesModificarSelect</a></li><li><a href="global.html#cargarArrayGlobal">cargarArrayGlobal</a></li><li><a href="global.html#cargarListaMovilidadesModal">cargarListaMovilidadesModal</a></li><li><a href="global.html#cargarListaMovilidadModalModificar">cargarListaMovilidadModalModificar</a></li><li><a href="global.html#checkAll">checkAll</a></li><li><a href="global.html#clearBusqueda">clearBusqueda</a></li><li><a href="global.html#comprobarNuevaMovilidad">comprobarNuevaMovilidad</a></li><li><a href="global.html#container">container</a></li><li><a href="global.html#data">data</a></li><li><a href="global.html#eliminarMovilidad">eliminarMovilidad</a></li><li><a href="global.html#filtroPorCiclo">filtroPorCiclo</a></li><li><a href="global.html#filtroPorPais">filtroPorPais</a></li><li><a href="global.html#functionsBtnPanel">functionsBtnPanel</a></li><li><a href="global.html#generarBusqueda">generarBusqueda</a></li><li><a href="global.html#generarCheckboxesCiclos">generarCheckboxesCiclos</a></li><li><a href="global.html#generarComboboxPaises">generarComboboxPaises</a></li><li><a href="global.html#generarTipoBusqueda">generarTipoBusqueda</a></li><li><a href="global.html#globalArray">globalArray</a></li><li><a href="global.html#GoogleMaps">GoogleMaps</a></li><li><a href="global.html#markers">markers</a></li><li><a href="global.html#modificarMovilidad">modificarMovilidad</a></li><li><a href="global.html#myMap">myMap</a></li><li><a href="global.html#nuevaMovilidad">nuevaMovilidad</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Dec 06 2017 20:35:58 GMT+0000 (GMT Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
